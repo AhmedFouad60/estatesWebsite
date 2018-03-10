@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('title')
+    استرجاع كلمة المرور
+@endsection
+
+@section('header')
+
+@endsection
 
 @section('content')
 <div class="container">
@@ -44,4 +51,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+
 @endsection

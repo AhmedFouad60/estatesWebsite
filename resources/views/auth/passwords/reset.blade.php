@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('title')
+    انشاء كلمة المرور جديدة
+@endsection
+
+@section('header')
+
+@endsection
 
 @section('content')
 <div class="container">
@@ -67,4 +74,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+
 @endsection
