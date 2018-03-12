@@ -1,0 +1,14 @@
+body{
+    direction: rtl;
+}
+.main-sidebar{
+    position: inherit;
+    float: right;
+}
+.content-wrapper,.main-footer{
+    margin-right: 230px;
+}
+
+.main-header .navbar-custom-menu, .main-header .navbar-right{
+    float:left;
+}

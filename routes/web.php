@@ -13,31 +13,30 @@
 
 
 
-Route::group(['middle'=>['web','auth']],function (){
+Route::group(['middleware'=>['web','auth']],function (){
 
     Route::get('/', function () {
         return view('welcome');
     });
-
+});
     Auth::routes();
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    /**
-            ***** Admin ******
-     */
+
+
+
+
+
+/**
+                                ***** Admin ******
+ */
+
+Route::group(['middleware' =>['admin','web']],function(){
     Route::resource('admin','AdminController');
-
-
-
-
-
-
-
-
-
-
 });
+
+
 
 
 
