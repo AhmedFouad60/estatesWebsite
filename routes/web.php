@@ -23,6 +23,18 @@ Route::group(['middle'=>['web','auth']],function (){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    /**
+            ***** Admin ******
+     */
+    Route::resource('admin','AdminController');
+
+
+
+
+
+
+
+
 
 
 });

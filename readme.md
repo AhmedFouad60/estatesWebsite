@@ -8,12 +8,26 @@
 </p>
 
 ## Foush Helpers
+-- login & register UI for the website
  ```php
 - php artisan make:auth
 ```
 - `php artisan make:auth` command will create all of the views you need for authentication and place them in the resources/views/auth directory.
 
+--Resoures in controller and routes
+```php
+    Route::resource('photo', 'PhotoController');
+```
 
+| Verb      |         Path        | Action | Route Name    |
+|-----------|:-------------------:|-------:|---------------|
+| GET       |        /photo       |  index | photo.index   |
+| GET       |    /photo/create    | create | photo.create  |
+| POST      |        /photo       |  store | photo.store   |
+| GET       | /photo/{photo}      | show   | photo.show    |
+| GET       | /photo/{photo}/edit | edit   | photo.edit    |
+| PUT/PATCH | /photo/{photo}      | update | photo.update  |
+| DELETE    | /photo/{photo}      | delete | photo.destroy |
 
 
 

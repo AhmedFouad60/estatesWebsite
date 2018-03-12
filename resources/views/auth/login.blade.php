@@ -20,10 +20,9 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="control-label">البريد الالكتروني</label>
 
-                            <div class="col-md-10 ">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                            <div class="col-md-12 text">
+                                <input id="email" placeholder="البريد الالكتروني" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -35,10 +34,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class=" control-label">كلمة المرور</label>
 
-                            <div class="col-md-10">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div class="col-md-12 text">
+                                <input id="password" placeholder="كلمة المرور" type="password" class=" form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -48,8 +46,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group ">
-                            <div class="col-md-6 col-md-offset-4">
+                        <div class="form-group text ">
+                            <div class="col-md-6 pull-right ">
                                 <div class="checkbox " >
                                     <label>
                                         <input class="pull-right" type="checkbox" style="margin-left:5px;" name="remember" {{ old('remember') ? 'checked' : '' }}> ذكرني
