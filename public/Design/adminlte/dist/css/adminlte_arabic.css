@@ -1,14 +1,75 @@
 body{
     direction: rtl;
+    font-family: 'Reem Kufi', sans-serif;
+
 }
 .main-sidebar{
-    position: inherit;
+    position: static;
     float: right;
 }
-.content-wrapper,.main-footer{
-    margin-right: 230px;
+.navbar-custom-menu>.navbar-nav>li{
+    float: right;
 }
 
+.main-header .sidebar-toggle{
+    float: right;
+}
+
+.sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer{
+        margin-right: 50px !important;
+        margin-left: 0px !important;
+}
+
+.control-sidebar.control-sidebar-open, .control-sidebar.control-sidebar-open+.control-sidebar-bg{
+    right: 1121px;
+}
+
+
+
+.content-wrapper, .main-footer{
+    margin-right: 230px !important;
+    margin-left: 0px !important;
+}
+.main-header .logo{
+    float: right;
+    font-family: 'Reem Kufi', sans-serif;
+
+}
+.main-header .navbar{
+    margin-right: 230px;
+    margin-left: 0px;
+}
+.sidebar-mini.sidebar-collapse .main-header .navbar{
+    margin-left: 0px;
+    margin-right: 0px;
+}
 .main-header .navbar-custom-menu, .main-header .navbar-right{
     float:left;
 }
+.navbar-custom-menu>.navbar-nav>li>.dropdown-menu{
+    right:-531%;
+}
+
+/****************** start  breadcrumb *****************/
+
+.content-header>.breadcrumb{
+    position: static;
+    float: left;
+    margin-left: 228px;
+}
+.breadcrumb>li{
+    float: left;
+    padding-right: 20px;
+
+}
+.content-header>.breadcrumb>li>a>.fa, .content-header>.breadcrumb>li>a>.glyphicon, .content-header>.breadcrumb>li>a>.ion{
+    float: left;
+}
+/****************** End  breadcrumb *****************/
+
+/************** start User panel ***********/
+
+.user-icon-status{
+    font-size: 9px;
+}
+/************** End User panel ***********/
