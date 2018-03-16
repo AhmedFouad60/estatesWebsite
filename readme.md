@@ -7,14 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Foush Helpers
--- login & register UI for the website
+# Foush Helpers
+### * login & register UI for the website
  ```php
 - php artisan make:auth
 ```
 - `php artisan make:auth` command will create all of the views you need for authentication and place them in the resources/views/auth directory.
 
---Resoures in controller and routes
+### * Resoures in controller and routes
 ```php
     Route::resource('photo', 'PhotoController');
 ```
@@ -55,6 +55,31 @@ $this->validate($request,[
 	‘content’=>’required’
 ]);
 ```
+## problems & solutions
+| problem     |         code        |      solution|
+|-----------|:-------------------:|:-------------------:|
+|  Error edit() must be an instance of App\User, none givn |none| [stackoverflow](https://stackoverflow.com/questions/40539623/error-edit-must-be-an-instance-of-app-user-none-given) 
+|test|test|test|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Support Materials
 
