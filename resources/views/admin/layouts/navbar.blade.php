@@ -44,7 +44,9 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">القائمة الرئيسية</li>
-      <li class="active treeview">
+
+
+      <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           <span class="pull-left-container">
@@ -53,9 +55,28 @@
         </a>
         <ul class="treeview-menu">
           <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-          <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+
         </ul>
       </li>
+
+      {{---------------------------Users-------------------}}
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-users"></i> <span>التحكم في الاعضاء</span>
+          <span class="pull-left-container">
+            <i class="fa fa-angle-left pull-left"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="{{url('/admin/users/create')}}"><i class="fa fa-circle-o"></i>  اضف عضو</a></li>
+          <li><a href="{{url('/admin/users')}}"><i class="fa fa-circle-o"></i>  كل الاعضاء</a></li>
+
+        </ul>
+      </li>
+
+
+
+
 
     </ul>
   </section>

@@ -33,7 +33,11 @@ Route::group(['middleware'=>['web','auth']],function (){
  */
 
 Route::group(['middleware' =>['admin','web']],function(){
+    Route::resource('/admin/users','UsersController');
+
     Route::resource('admin','AdminController');
+
+
 });
 
 

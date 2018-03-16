@@ -1,7 +1,16 @@
 body{
     direction: rtl;
+
+    /*font-family: 'Reem Kufi', sans-serif;*/
     font-family: 'Reem Kufi', sans-serif;
 
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Reem Kufi', sans-serif;
+
+}
+.panel{
+    border: none;
 }
 .main-sidebar{
     position: static;
@@ -55,7 +64,7 @@ body{
 .content-header>.breadcrumb{
     position: static;
     float: left;
-    margin-left: 228px;
+    margin-left: 8px;
 }
 .breadcrumb>li{
     float: left;
