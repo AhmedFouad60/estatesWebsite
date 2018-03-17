@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\AddUserRequestAdmin;
+use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
@@ -78,7 +79,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userUpdated=User::find($id);
+        $userUpdated->fill($request->all())->save();
+        return Redirect::back()->with('تم التعديل علي العضو بنجاح');
+
     }
 
     /**
@@ -91,4 +95,18 @@ class UsersController extends Controller
     {
         //
     }
+
+    public function changePassword(Request $request){
+        $id=$request['user_id'];
+        $user = User::findOrFail($id);
+        $password=bcrypt($request['password']);
+        $user->fill(['password'=>$password])->save();
+
+        return Redirect::back()->with('تم تغير كلمة المرور بنجاح');
+
+
+
+    }
+
+
 }

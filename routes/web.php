@@ -34,6 +34,8 @@ Route::group(['middleware'=>['web','auth']],function (){
 
 Route::group(['middleware' =>['admin','web']],function(){
     Route::resource('/admin/users','UsersController');
+    /****Admin ..users ***/
+    Route::post('admin/user/changePassword','UsersController@changePassword');
 
     Route::resource('admin','AdminController');
 

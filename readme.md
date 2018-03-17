@@ -56,10 +56,14 @@ $this->validate($request,[
 ]);
 ```
 ## problems & solutions
-| problem     |         code        |      solution|
-|-----------|:-------------------:|:-------------------:|
-|  Error edit() must be an instance of App\User, none givn |none| [stackoverflow](https://stackoverflow.com/questions/40539623/error-edit-must-be-an-instance-of-app-user-none-given) 
-|test|test|test|
+| problem     |code|solution| Description |
+|-----------|:-------------------:|:-------------------:|:-------------------:|
+|  Type error: Argument 2 passed to App\Http\Controllers\UsersController::edit() must be an instance of App\User, none given edit |none| [stackoverflow](https://stackoverflow.com/questions/40539623/error-edit-must-be-an-instance-of-app-user-none-given) 
+| {!! Form::close !!}Undefined class constant 'close|none|close in function so replace it with close()|
+|MethodNotAllowedHttpException: with laravel collective form model e.i( ``` php                                        {!! Form::model($user,['route'=>['users.update',$user->id,'method'=>'PATCH'],'class'=>'form-horizontal']) !!})|No message|                                         {!! Form::model($user,['route'=>['users.update',$user->id],'method'=>'PATCH','class'=>'form-horizontal']) !!} |you should put the form method after route square bracts not in the same bracket
+
+
+
 
 
 

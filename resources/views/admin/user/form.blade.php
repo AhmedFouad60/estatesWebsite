@@ -1,11 +1,9 @@
-
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class=" pull-right control-label">الاسم</label>
 
-                            <div class="col-md-10">
-                                <input id="name" type="text" class="form-control " name="name" value="{{ old('name') }}" required autofocus>
+                            <div class="col-md-12">
+                                {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'اسم المستخدم']) !!}
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -15,11 +13,28 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class=" control-label">البريد الالكتروني</label>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
-                            <div class="col-md-10">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                            <div class="col-md-12">
+                                {!! Form::select('admin',['0'=>'user','1'=>'admin'],null,['class'=>'form-control']) !!}
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+
+                            <div class="col-md-12">
+                                {!! Form::text('email',null,['class'=>'form-control','placeholder'=>'البريد الالكتروني']) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -29,32 +44,33 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class=" control-label">كلمة المرور</label>
+                        @if(!isset($user))
 
-                            <div class="col-md-10">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                                <div class="col-md-12">
+                                    <input id="password" type="password" placeholder="كلمة المرور"class="form-control " name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class=" control-label">تاكيد كلمة المرور</label>
+                            <div class="form-group">
 
-                            <div class="col-md-10">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <div class="col-md-12">
+                                    <input id="password-confirm" type="password" placeholder="تاكيد كلمة المرور"class="form-control " name="password_confirmation" required>
+                                </div>
                             </div>
-                        </div>
 
+
+                        @endif
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    تسجيل عضوية جديدة
-                                </button>
+                                <button type="submit" class="btn btn-primary center-block">
+                                    تنفيز                                </button>
                             </div>
                         </div>
