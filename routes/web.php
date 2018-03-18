@@ -28,16 +28,25 @@ Route::group(['middleware'=>['web','auth']],function (){
 
 
 
+
 /**
                                 ***** Admin ******
  */
 
 Route::group(['middleware' =>['admin','web']],function(){
+
+    #datatables
+    Route::get('/admin/users/data',['as'=>'admin.users.data','uses'=>'UsersController@anyData']);
+
+
+
     Route::resource('/admin/users','UsersController');
     /****Admin ..users ***/
     Route::post('admin/user/changePassword','UsersController@changePassword');
 
+
     Route::resource('admin','AdminController');
+
 
 
 });
