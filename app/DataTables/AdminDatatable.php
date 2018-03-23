@@ -16,7 +16,10 @@ class AdminDatatable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-           ->addColumn('action', 'admindatatable.action');
+           ->addColumn('action', 'admin.admindatatable.action')
+            ->rawColumns([
+                'action'
+            ]);
     }
 
     /**
@@ -40,13 +43,30 @@ class AdminDatatable extends DataTable
         return $this->builder()
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->addAction(['width' => '80px','title' => 'التحكم'])
+                    //->addAction(['width' => '80px','title' => 'التحكم'])
                     //->parameters($this->getBuilderParameters());
                     ->parameters([
-                        'dom' => 'Bfrtip',
-                        'buttons' => ['csv', 'excel', 'pdf', 'print', 'reset', 'reload'],
+                        'dom' => 'Blfrtip',
+
+                        'buttons' => [
+
+                           // ['extend'=>'csv','text'=>'test'],
+                            [ 'extend'=>'excel','text'=>'<i class="fa fa-file-excel-o"></i>&nbsp;ملف اكسل'],
+                          //  ['extend'=> 'pdf','text'=>'test'],
+                            [ 'extend'=>'print','text'=>'<i class="fa fa-print"></i>&nbsp;طباعة ']
+                         //   ,['extend'=> 'reset','text'=>'test'],
+                           // [ 'extend'=>'reload','text'=>'test']
+
+
+                        ],
+                        'lengthMenu'=> [
+                            [25, 50, 100, 200, -1],
+                            [25, 50, 100, 200, "All"]
+                        ],
 
                         ]);
+
+
 
     }
 
@@ -58,10 +78,46 @@ class AdminDatatable extends DataTable
     protected function getColumns()
     {
         return [
-            'id'=>[ 'title' => '#' ],
-            'name'=>[ 'title' => 'الاسم' ],
-            'email'=>[ 'title' => 'الاميل' ],
-            'created_at'=>[ 'title' => 'اضيف في' ],
+
+            [
+                'name'=>'id',
+                'data'=>'id',             //the name in the DB Table
+                'title' => '#'
+
+            ],
+            [
+                'name'=>'name',
+                'data'=>'name',             //the name in the DB Table
+                'title' => 'الاسم'
+
+            ],
+            [
+                'name'=>'email',
+                'data'=>'email',             //the name in the DB Table
+                'title' => 'الاميل'
+
+            ],
+            [
+                'name'=>'created_at',
+                'data'=>'created_at',             //the name in the DB Table
+                'title' => 'اضيف في'
+
+            ],
+            [
+                'name'=>'action',
+                'data'=>'action',             //the name in the DB Table
+                'title' => 'التحكم',
+                'exportable'=>false,
+                'printable'=>false,
+                'orderable'=>false,
+                'searchable'=>false
+
+
+
+
+            ]
+
+
 
 
         ];

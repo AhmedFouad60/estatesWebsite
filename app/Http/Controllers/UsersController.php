@@ -103,34 +103,7 @@ class UsersController extends Controller
 
 
     }
-    public function anyData(User $user)
-    {
 
-        dd('hi');
-
-
-        $users = $user->all();
-        return Datatables::of($users)
-
-            ->editColumn('name', function ($model) {
-                return '<a href="'.url('/admin/users/' . $model->id . '/edit').'">'.$model->name.'</a>';
-            })
-            ->editColumn('admin', function ($model) {
-                return $model->admin == 0 ? '<span class="badge badge-info">' . 'عضو' . '</span>' : '<span class="badge badge-warning">' . 'مدير الموقع' . '</span>';
-            })
-
-
-
-            ->editColumn('control', function ($model) {
-                $all = '<a href="' . url('/admin/users/' . $model->id . '/edit') . '" class="btn btn-info btn-circle"><i class="fa fa-edit"></i></a> ';
-                if($model->id != 1){
-                    $all .= '<a href="' . url('/admin/users/' . $model->id . '/delete') . '" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>';
-                }
-                return $all;
-            })
-            ->make(true);
-
-    }
 
 
 
