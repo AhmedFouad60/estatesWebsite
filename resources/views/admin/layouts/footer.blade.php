@@ -203,10 +203,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="{{URL::to('/Design/adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{URL::to('/Design/adminlte/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 $.widget.bridge('uibutton', $.ui.button);
@@ -241,5 +237,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- AdminLTE for demo purposes -->
 <script src="{{URL::to('/Design/adminlte/dist/js/demo.js')}}"></script>
 @yield('footer')
+        @stack('js')
+        @stack('css')
 </body>
 </html>

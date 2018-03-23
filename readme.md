@@ -46,6 +46,13 @@
         #To migrate the tables to the DB
             >php artisan migrate 
     ```    
+* #### DataTables
+     ```php
+        #To make datatable service
+            >php artisan datatables:make AdminDatatable
+             ```    
+          
+
 
 * #### Input Validation
 ```php
@@ -67,7 +74,7 @@ $this->validate($request,[
 
 
 
-
+  
 
 
 
@@ -94,7 +101,7 @@ $this->validate($request,[
 ### [Generate random key for JWT](https://github.com/tymondesigns/jwt-auth/issues/1425)
 ### [Non-static method Tymon\JWTAuth\JWTAuth::attempt()](https://github.com/tymondesigns/jwt-auth/issues/182)
     
-    
+### [How to make datatables with print csv Buttons](https://datatables.yajrabox.com/service)    
     
             
             

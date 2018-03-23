@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/dist/css/skins/_all-skins.min.css')}}">
   <!-- Morris chart -->
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/bower_components/morris.js/morris.css')}}">
+
+
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/bower_components/jvectormap/jquery-jvectormap.css')}}">
   <!-- Date Picker -->
@@ -31,6 +33,11 @@
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+  <!-- DataTables buttons for print , csv ,....-->
+
+
+  <link rel="stylesheet" href="{{URL::to('Design/adminlte/bower_components/datatables.net-bs/css/buttons.dataTables.min.css')}}">
+
 
   <!--The adminPanel Arabic -->
   <link rel="stylesheet" href="{{URL::to('Design/adminlte/dist/css/adminlte_arabic.css')}}">
@@ -45,6 +52,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
  {{-- <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">--}}
   <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+  <!-- jQuery 3 -->
+  <script src="{{URL::to('/Design/adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{{URL::to('/Design/adminlte/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 
   @yield('header')
 </head>

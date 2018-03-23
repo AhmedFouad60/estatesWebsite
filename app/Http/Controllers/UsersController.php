@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\AdminDatatable;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\AddUserRequestAdmin;
@@ -14,10 +15,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $user)
+    public function index(AdminDatatable $adminDatatable)
     {
-        $user=$user->all();
-        return view('admin.user.index',compact('user'));
+        return  $adminDatatable->render('admin.user.index');
     }
 
     /**
