@@ -26,25 +26,69 @@ Route::group(['middleware'=>['web','auth']],function (){
 
 
 
-
-
-
 /**
-                                ***** Admin ******
+   {$$$$$$$$$$$$$$$$$$$$$$$$$$$$=========== Admin =======$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
  */
+
+
+// ===============================================
+// Building control ====================================
+// Admin role ====================================
+// ===============================================
+
+Route::resource('/admin/building','BuildingController');
+
+
+
+
 
 Route::group(['middleware' =>['admin','web']],function(){
 
-    /**------------------siteSetting------------------***/
+/**============================== Start siteSetting========================***/
+
     Route::get('/admin/siteSetting', 'SiteSettingController@index');
     Route::post('/admin/siteSetting', 'SiteSettingController@store');
 
+/**================================End siteSetting==========================***/
+
+
+/**================================ Start admin-> controlling the users ========***/
+
 
     Route::resource('/admin/users','UsersController');
-    /****Admin ..users ***/
+
+/**==========================End admin-> controlling the users ========================***/
+
+
+/****=================================Start Admin Resource======================================= ***/
     Route::post('admin/user/changePassword','UsersController@changePassword');
 
     Route::resource('admin','AdminController');
+
+/****=================================End Admin Resource======================================= ***/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
